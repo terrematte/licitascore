@@ -16,7 +16,7 @@ Além disso, seguindo indicação de uma outra necessidade do MP, foram constru�
 
 ## Dados :memo:
 
-Os Dados disponíveis no sistema são dados abertos reais dispobilizados pelos portais da [Receita Federal](htp://receita.economia.gov.br/orientacao/tributaria/cadastros/cadastro-nacional-de-pessoas-juridicas-cnpj/dados-publicos-cnpj) e do [Jusbrasil](https://www.jusbrasil.com.br/home).
+Os Dados disponíveis no sistema são dados abertos reais dispobilizados pelos portais da [Receita Federal](http://receita.economia.gov.br/orientacao/tributaria/cadastros/cadastro-nacional-de-pessoas-juridicas-cnpj/dados-publicos-cnpj) e do [Jusbrasil](https://www.jusbrasil.com.br/home).
 
 Os dados foram obtidos filtrando as licitações vencendoras disponíveis no TCE-RN com as palavras chaves "ALIMENTAÇÃO EST" e "MERENDA" em 2019.
 

@@ -1,10 +1,10 @@
 # licitascore
 
-> Este repositório tem como objetivo disponibilizar o sistema ***licitascore***.
+> Este repositório tem como objetivo disponibilizar o sistema **licitascore**.
 
 Criado por ocasião do [HackFest 2019](https://hackfest.imd.ufrn.br), o Pandora Team decidiu se ater à questão das licitações e abrir a caixa de pandora desse universo, explorando informações que pudessem agilizar o trabalho do Ministério Público no rastreamento de empresas que juntas ou de maneira isolada fraudulam processo licitatórios. 
 
-A ferramenta do ***licitascore*** estabelece um índice de ```DESconfiabilidade´´´ de pessoas jurídicas/CNPJs que participaram de licitações de acordo com os seguintes implementados até o momento:
+A ferramenta do **licitascore** estabelece um índice de ```DESconfiabilidade´´´ de pessoas jurídicas/CNPJs que participaram de licitações de acordo com os seguintes implementados até o momento:
 
 ❏ Processos trabalhistas e criminais
 ❏ Cadastro de empresas inidôneas

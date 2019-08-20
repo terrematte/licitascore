@@ -7,7 +7,9 @@ Criado por ocasião do [HackFest 2019](https://hackfest.imd.ufrn.br), o Pandora 
 A ferramenta do **licitascore** estabelece um índice de ```DESconfiabilidade´´´ de pessoas jurídicas/CNPJs que participaram de licitações de acordo com os seguintes implementados até o momento:
 
 ❏ Processos trabalhistas e criminais
+
 ❏ Cadastro de empresas inidôneas
+
 ❏ Número de CNAEs das empresas
 
 O resultado foi aplicado em dois quadros interativos que se complementam - o primeiro, um mapa do estado do Rio Grande do Norte com os nomes e licitascores de diferentes empresas e as localizações de suas sedes e o segundo é um grafo em que as diferentes empresas analisadas são conectadas por sócios em comum, caso haja.

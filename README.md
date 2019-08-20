@@ -16,11 +16,13 @@ O resultado foi aplicado em dois quadros interativos que se complementam - o pri
 
 Além disso, seguindo indicação de uma outra necessidade do MP, foram construídas diversas análises generalistas acerca das licitações realizadas no Rio Grande do Norte. São representadas as modalidades empregadas em diferentes anos e os tipos de objeto adquiridos através desses processos a fim de estimular perguntas chave para outras análises e identificação de possíveis anormalidades.
 
-## Dados :memo:
+### Dados :memo:
 
 Os Dados disponíveis no sistema são dados abertos reais dispobilizados pelos portais da [Receita Federal](http://receita.economia.gov.br/orientacao/tributaria/cadastros/cadastro-nacional-de-pessoas-juridicas-cnpj/dados-publicos-cnpj) e do [Jusbrasil](https://www.jusbrasil.com.br/home).
 
 Os dados foram obtidos filtrando as licitações vencendoras disponíveis no TCE-RN com as palavras chaves "ALIMENTAÇÃO EST" e "MERENDA" em 2019.
+
+### Execução :dart:
 
 O sistema foi desenvolvido nas linguagen Python3 e R. 
 

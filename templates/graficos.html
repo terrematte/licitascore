@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<div class="row">
+    <div class="col text-center">
+        <h1 class="text-primary animated fadeIn">
+            Gráficos
+        </h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <img src="{{ chart1 }}" class="img img-fluid" alt="">
+    </div>
+    <div class="col">
+        <img src="{{ chart2 }}" class="img img-fluid" alt="">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <img src="{{ chart3 }}" class="img img-fluid" alt="">
+    </div>
+    <div class="col">
+        <img src="{{ chart4 }}" class="img img-fluid" alt="">
+    </div>
+</div>
+
+{% endblock %}

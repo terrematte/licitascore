@@ -1,0 +1,68 @@
+{% extends "base.html" %} {% block conteudo %}
+<div class="row">
+    <div class="col text-center">
+        <h1 class="text-primary animated fadeIn" id="grafo">
+            Ligações entre empresas
+        </h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <iframe src="../static/csv/licitascore.html" style="width: 100%; min-height: 800px;" frameborder="1"></iframe>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col text-center">
+        <h1 class="text-primary animated fadeIn" id="mapa">
+            Mapa de licitações
+        </h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <iframe srcdoc="{{ mapa }}" style="width: 100%; min-height: 800px;" frameborder="0"></iframe>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col text-center">
+        <h1 class="text-primary animated fadeIn" id="graficos">
+            Gráficos
+        </h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col text-center">
+        <img src="{{ chart1 }}" class="img img-fluid" alt="">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col text-center">
+        <img src="{{ chart2 }}" class="img img-fluid" alt="">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col text-center">
+        <img src="{{ chart3 }}" class="img img-fluid" alt="">
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col text-center">
+        <img src="{{ chart4 }}" class="img img-fluid" alt="">
+    </div>
+</div>
+
+
+<!-- <div class="chart" id="bargraph">
+        <script>
+            var graphs = {{plot | safe}};
+            Plotly.plot('bargraph',graphs,{});
+        </script>
+    </div> -->
+{% endblock %}

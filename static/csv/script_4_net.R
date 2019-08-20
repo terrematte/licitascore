@@ -1,0 +1,72 @@
+if (!require('readr')) {install.packages("readr")} 
+
+if (!require('dplyr')) {install.packages("dplyr")} 
+
+if (!require('visNetwork')) {install.packages("visNetwork")} 
+
+
+empresas <- read_delim("cnpj_dados_cadastrais_pj_merenda_rn.csv",
+                       "#", escape_double = FALSE, trim_ws = TRUE)
+
+socios <- read_delim("cnpj_dados_socios_pj_merenda_rn.csv",
+                     "#", escape_double = FALSE, trim_ws = TRUE)
+
+empresas_scores <- read_delim("dataset_final_scores_mean.csv",
+                     ",", escape_double = FALSE, trim_ws = TRUE)
+
+norm_col <- function(x){(x-min(x))/(max(x)-min(x))}
+
+
+empresas_scores$numero_cnae <- norm_col(empresas_scores$numero_cnae)
+empresas_scores$jusbrasil <-  norm_col(empresas_scores$jusbrasil)
+empresas_scores$inidonea <-  norm_col(empresas_scores$inidonea)
+empresas_scores$inidonea <- 0
+
+empresas_scores$score <- rowSums(empresas_scores[,c(2:4)])
+empresas_scores$score_0 <-empresas_scores$score
+
+
+empresas_scores <- mutate(empresas_scores, score = ntile(empresas_scores$score,5))
+
+empresas <- merge(empresas, empresas_scores, by="cnpj")
+
+empresas<- empresas[,c("cnpj", "razao_social", "score")]
+socios<- socios[,c("cnpj", "nome_socio", "cnpj_cpf_socio")]
+
+empresas_socios <- inner_join(empresas, socios, by="cnpj")
+
+#EDGES
+edges <- dplyr::inner_join(empresas_socios, empresas_socios, by = "nome_socio") %>% 
+  dplyr::filter(razao_social.x != razao_social.y) %>% 
+  dplyr::distinct(razao_social.x, razao_social.y) %>% 
+  dplyr::rowwise() %>% 
+  # concatena as empresas_socioss de forma ordenada
+  dplyr::mutate(concat = paste(sort(c(razao_social.x, razao_social.y)), 
+                               collapse = "_")) %>% 
+  dplyr::ungroup() %>% 
+  # tira arestas duplicadas
+  dplyr::distinct(concat, .keep_all = TRUE) %>% 
+  dplyr::select(from = razao_social.x, to = razao_social.y)
+
+# NODES
+nodes <- empresas_socios %>% 
+  dplyr::distinct(razao_social, .keep_all = TRUE) %>% 
+  dplyr::transmute(id = razao_social, label = razao_social, score = score) %>% 
+  dplyr::filter(label %in% c(edges$from, edges$to))  
+
+g <- list(nodes = nodes, edges = edges)
+
+
+#Create a function to generate a continuous color palette
+rbPal <- colorRampPalette(c('blue','red'))
+
+#This adds a column of color values based on the score values
+nodes$color <- rbPal(4)[as.numeric(cut(nodes$score,breaks = 4))]
+
+v <- visNetwork(nodes, edges, width = "100%")
+v <- visNetwork::visOptions(v, highlightNearest = TRUE,
+                            nodesIdSelection = TRUE, selectedBy = "score") %>% 
+  visInteraction(navigationButtons = TRUE) 
+
+teste <- visSave(v, 'licitascore.html', selfcontained = FALSE, background = "white")
+print(teste)

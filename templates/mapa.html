@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block conteudo %}
+<div class="row">
+    <div class="col text-center">
+        <h1 class="text-primary animated fadeIn">
+            Mapa de licitações
+        </h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <iframe srcdoc="{{ mapa }}" style="width: 100%; min-height: 800px;" frameborder="0"></iframe>
+    </div>
+</div>
+
+{% endblock %}

@@ -51,7 +51,7 @@ Uma vez instalados os módulos o script main.py deve ser executado e o site esta
 * [Lattes](http://lattes.cnpq.br/7232169055258869)
 
 :bust_in_silhouette: __Paulo Soares__:
-* [Github](https://github.com/)
+* [Github](https://github.com/Hatsura)
 * [Lattes](http://lattes.cnpq.br/1232677110942724)
 
 :bust_in_silhouette: __Patrick Terrematte__:

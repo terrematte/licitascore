@@ -1,0 +1,11 @@
+flask
+flask_restful
+flask_monitoringdashboard
+numpy
+pandas
+branca
+jinja2
+requests
+matplotlib
+seaborn
+folium
